@@ -1,257 +1,103 @@
-
-.pagina-admin .admin-habitacion-contenedor {
-  width: 100%;
-  max-width: 1100px;
-  margin: 48px auto 0;
-  padding: 44px 48px;
-  background: #ffffff;
-  border: 1px solid #e1e8ed;
-  border-radius: 16px;
-  box-shadow: 0 10px 35px rgba(16, 48, 66, 0.07);
-  scroll-margin-top: 35px;
+* {
+  box-sizing: border-box;
 }
 
-.admin-habitacion-encabezado {
-  margin-bottom: 34px;
-  text-align: left;
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 20px;
 }
 
-.admin-habitacion-encabezado .seccion-etiqueta {
-  display: inline-block;
-  margin-bottom: 12px;
-  font-size: 12px;
-  font-weight: 700;
-  letter-spacing: 1.5px;
-  color: #1ca6a0;
-}
-
-.admin-habitacion-encabezado h2 {
-  margin: 0 0 12px;
-  color: #092d4a;
-  font-size: 32px;
-  font-weight: 700;
-  line-height: 1.25;
-}
-
-.admin-habitacion-encabezado p {
+body {
   margin: 0;
-  color: #657584;
-  font-size: 15px;
-  line-height: 1.6;
+  min-width: 320px;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: #ffffff;
+  color: #18364a;
+  -webkit-font-smoothing: antialiased;
 }
 
-.admin-habitacion-formulario {
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  overflow-wrap: break-word;
+}
+
+:focus-visible {
+  outline: 3px solid #19a7a0;
+  outline-offset: 3px;
+}
+
+
+.pagina-admin .admin-registro-habitacion {
+  width: 100%;
+  max-width: 1050px;
+}
+
+.pagina-admin .admin-form-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  column-gap: 28px;
-  row-gap: 24px;
-  width: 100%;
+  gap: 20px 24px;
 }
 
-.admin-habitacion-campo {
+.pagina-admin .admin-form-campo {
   display: flex;
   flex-direction: column;
-  gap: 9px;
+  gap: 8px;
   min-width: 0;
 }
 
-.admin-habitacion-campo label {
-  display: block;
+.pagina-admin .admin-form-campo label {
   margin: 0;
-  color: #18364a;
-  font-size: 14px;
-  font-weight: 600;
 }
 
-.admin-habitacion-campo input,
-.admin-habitacion-campo select,
-.admin-habitacion-campo textarea {
-  display: block;
+.pagina-admin .admin-form-campo input,
+.pagina-admin .admin-form-campo select,
+.pagina-admin .admin-form-campo textarea {
   width: 100%;
   min-width: 0;
-  min-height: 48px;
-  padding: 12px 15px;
   margin: 0;
-  background: #ffffff;
-  border: 1px solid #d7e0e6;
-  border-radius: 8px;
-  color: #18364a;
-  font-size: 14px;
-  line-height: 1.5;
-  outline: none;
-  box-shadow: none;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
-.admin-habitacion-campo input::placeholder,
-.admin-habitacion-campo textarea::placeholder {
-  color: #9aa8b3;
-}
-
-.admin-habitacion-campo input:hover,
-.admin-habitacion-campo select:hover,
-.admin-habitacion-campo textarea:hover {
-  border-color: #9cb6c5;
-}
-
-.admin-habitacion-campo input:focus,
-.admin-habitacion-campo select:focus,
-.admin-habitacion-campo textarea:focus {
-  border-color: #1ca6a0;
-  box-shadow: 0 0 0 3px rgba(28, 166, 160, 0.12);
-}
-
-.admin-habitacion-campo textarea {
-  min-height: 120px;
+.pagina-admin .admin-form-campo textarea {
   resize: vertical;
-  font-family: inherit;
 }
 
-.admin-habitacion-campo select {
-  cursor: pointer;
-}
-
-.admin-campo-completo {
+.pagina-admin .admin-form-ancho,
+.pagina-admin .admin-form-acciones {
   grid-column: 1 / -1;
 }
 
-.admin-campo-ayuda {
-  color: #82919e;
-  font-size: 12px;
-  line-height: 1.5;
-}
-
-.admin-habitacion-acciones {
+.pagina-admin .admin-form-acciones {
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  gap: 14px;
-  grid-column: 1 / -1;
-  margin-top: 10px;
-  padding-top: 24px;
-  border-top: 1px solid #e9eef2;
-}
-
-.admin-habitacion-acciones .admin-boton-guardar {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: auto;
-  min-width: 230px;
-  min-height: 48px;
-  margin: 0;
-  padding: 12px 26px;
-  border: none;
-  border-radius: 8px;
-  background: #1ca6a0;
-  color: #ffffff;
-  font-size: 14px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-}
-
-.admin-habitacion-acciones .admin-boton-guardar:hover:not(:disabled) {
-  background: #158983;
-}
-
-.admin-habitacion-acciones .admin-boton-guardar:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-}
-
-.admin-boton-cancelar {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 48px;
-  padding: 12px 24px;
-  background: #ffffff;
-  border: 1px solid #d5dfe5;
-  border-radius: 8px;
-  color: #526879;
-  font-size: 14px;
-  font-weight: 600;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-}
-
-.admin-boton-cancelar:hover:not(:disabled) {
-  background: #f1f5f7;
-}
-
-.admin-boton-cancelar:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
+  flex-direction: column;
+  gap: 12px;
 }
 
 @media (max-width: 768px) {
-  .pagina-admin .admin-habitacion-contenedor {
-    width: 100%;
-    max-width: 100%;
-    margin: 32px auto 0;
-    padding: 28px 22px;
-    border-radius: 12px;
-  }
-
-  .admin-habitacion-encabezado {
-    margin-bottom: 26px;
-  }
-
-  .admin-habitacion-encabezado h2 {
-    font-size: 26px;
-  }
-
-  .admin-habitacion-encabezado p {
-    font-size: 14px;
-  }
-
-  .admin-habitacion-formulario {
-    grid-template-columns: minmax(0, 1fr);
-    gap: 20px;
-  }
-
-  .admin-campo-completo {
-    grid-column: auto;
-  }
-
-  .admin-habitacion-campo input,
-  .admin-habitacion-campo select,
-  .admin-habitacion-campo textarea {
-    min-height: 46px;
-    font-size: 14px;
-  }
-
-  .admin-habitacion-campo textarea {
-    min-height: 110px;
-  }
-
-  .admin-habitacion-acciones {
-    grid-column: auto;
-    flex-direction: column;
-    align-items: stretch;
-    gap: 12px;
-    margin-top: 4px;
-    padding-top: 22px;
-  }
-
-  .admin-habitacion-acciones .admin-boton-guardar,
-  .admin-boton-cancelar {
-    width: 100%;
-    min-width: 0;
-  }
-}
-
-@media (max-width: 480px) {
-  .pagina-admin .admin-habitacion-contenedor {
-    padding: 24px 16px;
-  }
-
-  .admin-habitacion-encabezado h2 {
-    font-size: 24px;
-  }
-
-  .admin-habitacion-formulario {
-    gap: 18px;
+  .pagina-admin .admin-form-grid {
+    grid-template-columns: 1fr;
   }
 }
